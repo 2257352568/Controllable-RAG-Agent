@@ -29,3 +29,7 @@
 完成个人仓库整理和最小口述验收后，可以将其定位为“Agentic RAG 学习与评测项目”，描述多源检索、证据引用/拒答、预算控制、三路径评测和真实失败复盘。不得写准确率提升、Agent 优于 baseline、显著降低幻觉、生产级或从零原创。
 
 在上述两项完成前，技术实现可以继续作为学习材料和本地演示，但不建议作为可经受面试追问的正式简历项目投递。
+
+## 首次远端发布复核
+
+个人仓库已由所有者本人创建根提交并推送，远端 `main` 与本地提交 `7d1cb7628d737315a31e137bcea796615cdec649` 一致，仓库不是 fork，当前 Git 历史只有所有者一名作者。首个 `Offline quality gates` 在 55 秒后失败，失败步骤为 `Verify prioritized interview queue`。根因是发布前更新了 `QUESTION_BANK.md` 的 A13 答案，但没有同步重生成派生文件 `STUDY_QUEUE.md`；这不是模型质量或运行逻辑故障。现已运行 `python evaluation/build_interview_queue.py`，162 道题的队列重新生成且本地 `--check` 通过。修复仍需所有者本人提交、推送并确认第二轮 CI 通过。

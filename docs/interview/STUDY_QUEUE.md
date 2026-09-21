@@ -2,7 +2,7 @@
 
 > 此文件由 `evaluation/build_interview_queue.py` 生成，请勿手工编辑。
 
-- Question bank SHA256: `e158cc6d96e4b01b4a52d042b5030c53aed515985543c30805d5640e1afb3e45`
+- Question bank SHA256: `30f996aa4ebe3c0dd7aef2714a959eaef44beea93c0ac1be9ca04a417a840083`
 - 总题数：162
 - 状态：GAP 12 / PARTIAL 46 / READY 104
 - 当前展示：前 50 题
