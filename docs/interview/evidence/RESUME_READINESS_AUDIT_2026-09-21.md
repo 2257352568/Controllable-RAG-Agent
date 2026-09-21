@@ -33,3 +33,5 @@
 ## 首次远端发布复核
 
 个人仓库已由所有者本人创建根提交并推送，远端 `main` 与本地提交 `7d1cb7628d737315a31e137bcea796615cdec649` 一致，仓库不是 fork，当前 Git 历史只有所有者一名作者。首个 `Offline quality gates` 在 55 秒后失败，失败步骤为 `Verify prioritized interview queue`。根因是发布前更新了 `QUESTION_BANK.md` 的 A13 答案，但没有同步重生成派生文件 `STUDY_QUEUE.md`；这不是模型质量或运行逻辑故障。现已运行 `python evaluation/build_interview_queue.py`，162 道题的队列重新生成且本地 `--check` 通过。修复仍需所有者本人提交、推送并确认第二轮 CI 通过。
+
+第二次提交 `5f34034e744b0de005b42a4a73fda7e98ec86261` 修复题库后，远端 CI 在 `Audit ingestion and index distributions` 失败。本地同一命令通过，进一步对比干净提交文件后确认：`.gitignore` 的 `*.ipynb` 把审计入口依赖的 `sophisticated_rag_agent_harry_potter.ipynb` 排除在 Git 历史外，而本地工作区仍有该文件，形成“本地通过、CI 缺文件”的环境漂移。现已为这一份 356 KiB 的上游 Notebook 增加精确反向规则；其余 Notebook 仍默认忽略。该修复需由所有者提交并以新一轮远端 CI 验证。

@@ -120,6 +120,7 @@ desktop.ini
 .conda/
 *.conda
 *.ipynb
+!sophisticated_rag_agent_harry_potter.ipynb
 
 # Environments
 .env
