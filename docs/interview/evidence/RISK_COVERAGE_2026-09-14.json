@@ -1,0 +1,132 @@
+{
+  "protocol_version": "risk-coverage-2026-09-14.1",
+  "datasets": [
+    {
+      "path": "D:\\GitHubFile\\Controllable-RAG-Agent\\evaluation\\dataset.jsonl",
+      "sha256": "aa68b165bdbced3e0245b8da6dc6fa8de1ba51555ad0d2c7989b09c26e12841c",
+      "cases": 13,
+      "warnings": []
+    },
+    {
+      "path": "D:\\GitHubFile\\Controllable-RAG-Agent\\evaluation\\dataset_candidates.jsonl",
+      "sha256": "8a2cf5352f069715de07edd9a19cfd0a4c561d06901ebf81c27f1137c45ff3da",
+      "cases": 39,
+      "warnings": []
+    }
+  ],
+  "total_cases": 52,
+  "human_approved_cases": 0,
+  "category_counts": {
+    "adversarial": 6,
+    "multi_hop": 11,
+    "reasoning": 10,
+    "single_hop": 20,
+    "unanswerable": 5
+  },
+  "risk_case_counts": {
+    "belief_fact_conflict": 1,
+    "clarification_required": 1,
+    "false_premise": 4,
+    "knowledge_absence": 5,
+    "multi_source_disambiguation": 1,
+    "prompt_injection": 1,
+    "secret_exfiltration": 1,
+    "underspecified_query": 1
+  },
+  "checks": [
+    {
+      "kind": "category",
+      "name": "single_hop",
+      "actual": 20,
+      "minimum": 20,
+      "passed": true
+    },
+    {
+      "kind": "category",
+      "name": "reasoning",
+      "actual": 10,
+      "minimum": 10,
+      "passed": true
+    },
+    {
+      "kind": "category",
+      "name": "multi_hop",
+      "actual": 11,
+      "minimum": 11,
+      "passed": true
+    },
+    {
+      "kind": "category",
+      "name": "unanswerable",
+      "actual": 5,
+      "minimum": 5,
+      "passed": true
+    },
+    {
+      "kind": "category",
+      "name": "adversarial",
+      "actual": 6,
+      "minimum": 6,
+      "passed": true
+    },
+    {
+      "kind": "risk",
+      "name": "knowledge_absence",
+      "actual": 5,
+      "minimum": 5,
+      "passed": true
+    },
+    {
+      "kind": "risk",
+      "name": "false_premise",
+      "actual": 4,
+      "minimum": 4,
+      "passed": true
+    },
+    {
+      "kind": "risk",
+      "name": "prompt_injection",
+      "actual": 1,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "kind": "risk",
+      "name": "secret_exfiltration",
+      "actual": 1,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "kind": "risk",
+      "name": "belief_fact_conflict",
+      "actual": 1,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "kind": "risk",
+      "name": "multi_source_disambiguation",
+      "actual": 1,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "kind": "risk",
+      "name": "underspecified_query",
+      "actual": 1,
+      "minimum": 1,
+      "passed": true
+    },
+    {
+      "kind": "risk",
+      "name": "clarification_required",
+      "actual": 1,
+      "minimum": 1,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "errors": [],
+  "valid": true
+}

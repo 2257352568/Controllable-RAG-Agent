@@ -1,0 +1,348 @@
+{
+  "metadata": {
+    "created_at": "2026-09-13T16:19:30.056056+00:00",
+    "dataset_sha256": "436fee4a961001fca59d1edc5785bf7a602156b4e56225ff67b9a96fa5a030e7",
+    "prompt_version": "2026-09-14.1",
+    "model": "qwen3.8-max",
+    "base_url_host": "dashscope.aliyuncs.com",
+    "temperature": 0,
+    "max_output_tokens": 2000,
+    "sdk_max_retries": 5,
+    "request_timeout_seconds": 60,
+    "logical_call_limit": 16,
+    "token_limit": 20000,
+    "deadline_seconds": 180,
+    "baseline": "all evidence context with the SAME current prompt/model",
+    "scope": "4 synthetic cases x 2 verifier stages x 2 context variants; no retrieval/generation benchmark",
+    "source_sha256": {
+      "controllable_rag/nodes.py": "7a37bb71b1f071be6594d4d5a3c07877916c2dc64415c4d3e5244f1ef5eafc12",
+      "controllable_rag/prompts.py": "026178427d4482b7ed537b5f9e3eb33aceab5871efe5b1f57ac851c17285693f",
+      "controllable_rag/citations.py": "6c2721abc3a09547772521e5d78d0e1f4e44c8e7641e60ae042dfe884b573b6d",
+      "evaluation/run_citation_grounding_probe.py": "0e3cb741e47fcef4f0e27763477fc0abef5eaa02d6c5ac5696e434c8d4f38edd"
+    },
+    "packages": {
+      "langchain-core": "1.6.3",
+      "langchain-openai": "1.6.2",
+      "langgraph": "1.2.11"
+    }
+  },
+  "summary": {
+    "all_evidence_context": {
+      "decisions": 8,
+      "matches_expected": 4,
+      "unsupported_accepted": 3,
+      "errors": 0
+    },
+    "selected_source_context": {
+      "decisions": 8,
+      "matches_expected": 8,
+      "unsupported_accepted": 0,
+      "errors": 0
+    }
+  },
+  "budget": {
+    "max_model_requests": 16,
+    "max_total_tokens": 20000,
+    "model_requests_started": 16,
+    "tokens_committed": 7182,
+    "tokens_reserved": 0,
+    "budget_accounting_complete": true,
+    "max_elapsed_seconds": 180.0,
+    "elapsed_seconds": 55.875,
+    "remaining_seconds": 124.125
+  },
+  "records": [
+    {
+      "case_id": "single_correct",
+      "stage": "answer",
+      "variant": "all_evidence_context",
+      "expected_grounded": true,
+      "selected_source_ids": [
+        "chunks-p1-4755863070"
+      ],
+      "grounded": true,
+      "error_type": null,
+      "latency_seconds": 4.3962,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 363,
+      "output_tokens": 70,
+      "total_tokens": 433,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "single_correct",
+      "stage": "answer",
+      "variant": "selected_source_context",
+      "expected_grounded": true,
+      "selected_source_ids": [
+        "chunks-p1-4755863070"
+      ],
+      "grounded": true,
+      "error_type": null,
+      "latency_seconds": 2.4934,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 284,
+      "output_tokens": 77,
+      "total_tokens": 361,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "single_correct",
+      "stage": "distillation",
+      "variant": "all_evidence_context",
+      "expected_grounded": true,
+      "selected_source_ids": [
+        "chunks-p1-4755863070"
+      ],
+      "grounded": false,
+      "error_type": null,
+      "latency_seconds": 4.5306,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 349,
+      "output_tokens": 132,
+      "total_tokens": 481,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "single_correct",
+      "stage": "distillation",
+      "variant": "selected_source_context",
+      "expected_grounded": true,
+      "selected_source_ids": [
+        "chunks-p1-4755863070"
+      ],
+      "grounded": true,
+      "error_type": null,
+      "latency_seconds": 3.1573,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 270,
+      "output_tokens": 87,
+      "total_tokens": 357,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "single_wrong_citation",
+      "stage": "answer",
+      "variant": "selected_source_context",
+      "expected_grounded": false,
+      "selected_source_ids": [
+        "chunks-p2-d26c023297"
+      ],
+      "grounded": false,
+      "error_type": null,
+      "latency_seconds": 3.6192,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 283,
+      "output_tokens": 106,
+      "total_tokens": 389,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "single_wrong_citation",
+      "stage": "answer",
+      "variant": "all_evidence_context",
+      "expected_grounded": false,
+      "selected_source_ids": [
+        "chunks-p2-d26c023297"
+      ],
+      "grounded": true,
+      "error_type": null,
+      "latency_seconds": 2.484,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 363,
+      "output_tokens": 70,
+      "total_tokens": 433,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "single_wrong_citation",
+      "stage": "distillation",
+      "variant": "selected_source_context",
+      "expected_grounded": false,
+      "selected_source_ids": [
+        "chunks-p2-d26c023297"
+      ],
+      "grounded": false,
+      "error_type": null,
+      "latency_seconds": 2.9316,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 269,
+      "output_tokens": 98,
+      "total_tokens": 367,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "single_wrong_citation",
+      "stage": "distillation",
+      "variant": "all_evidence_context",
+      "expected_grounded": false,
+      "selected_source_ids": [
+        "chunks-p2-d26c023297"
+      ],
+      "grounded": false,
+      "error_type": null,
+      "latency_seconds": 3.4856,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 349,
+      "output_tokens": 124,
+      "total_tokens": 473,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "multi_missing_premise",
+      "stage": "answer",
+      "variant": "all_evidence_context",
+      "expected_grounded": false,
+      "selected_source_ids": [
+        "chunks-p1-4755863070"
+      ],
+      "grounded": true,
+      "error_type": null,
+      "latency_seconds": 3.4422,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 382,
+      "output_tokens": 133,
+      "total_tokens": 515,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "multi_missing_premise",
+      "stage": "answer",
+      "variant": "selected_source_context",
+      "expected_grounded": false,
+      "selected_source_ids": [
+        "chunks-p1-4755863070"
+      ],
+      "grounded": false,
+      "error_type": null,
+      "latency_seconds": 2.968,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 303,
+      "output_tokens": 107,
+      "total_tokens": 410,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "multi_missing_premise",
+      "stage": "distillation",
+      "variant": "all_evidence_context",
+      "expected_grounded": false,
+      "selected_source_ids": [
+        "chunks-p1-4755863070"
+      ],
+      "grounded": true,
+      "error_type": null,
+      "latency_seconds": 3.4088,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 368,
+      "output_tokens": 142,
+      "total_tokens": 510,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "multi_missing_premise",
+      "stage": "distillation",
+      "variant": "selected_source_context",
+      "expected_grounded": false,
+      "selected_source_ids": [
+        "chunks-p1-4755863070"
+      ],
+      "grounded": false,
+      "error_type": null,
+      "latency_seconds": 3.3128,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 289,
+      "output_tokens": 116,
+      "total_tokens": 405,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "multi_complete",
+      "stage": "answer",
+      "variant": "selected_source_context",
+      "expected_grounded": true,
+      "selected_source_ids": [
+        "chunks-p1-4755863070",
+        "chunks-p2-d26c023297"
+      ],
+      "grounded": true,
+      "error_type": null,
+      "latency_seconds": 3.3191,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 382,
+      "output_tokens": 132,
+      "total_tokens": 514,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "multi_complete",
+      "stage": "answer",
+      "variant": "all_evidence_context",
+      "expected_grounded": true,
+      "selected_source_ids": [
+        "chunks-p1-4755863070",
+        "chunks-p2-d26c023297"
+      ],
+      "grounded": true,
+      "error_type": null,
+      "latency_seconds": 3.273,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 382,
+      "output_tokens": 132,
+      "total_tokens": 514,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "multi_complete",
+      "stage": "distillation",
+      "variant": "selected_source_context",
+      "expected_grounded": true,
+      "selected_source_ids": [
+        "chunks-p1-4755863070",
+        "chunks-p2-d26c023297"
+      ],
+      "grounded": true,
+      "error_type": null,
+      "latency_seconds": 3.6497,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 368,
+      "output_tokens": 142,
+      "total_tokens": 510,
+      "token_usage_available": true
+    },
+    {
+      "case_id": "multi_complete",
+      "stage": "distillation",
+      "variant": "all_evidence_context",
+      "expected_grounded": true,
+      "selected_source_ids": [
+        "chunks-p1-4755863070",
+        "chunks-p2-d26c023297"
+      ],
+      "grounded": true,
+      "error_type": null,
+      "latency_seconds": 5.3583,
+      "model_requests": 1,
+      "successful_requests": 1,
+      "input_tokens": 368,
+      "output_tokens": 142,
+      "total_tokens": 510,
+      "token_usage_available": true
+    }
+  ]
+}

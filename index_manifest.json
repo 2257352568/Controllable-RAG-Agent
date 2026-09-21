@@ -1,0 +1,45 @@
+{
+  "schema_version": "2026-09-13.1",
+  "embedding": {
+    "model": "text-embedding-v4",
+    "dimensions": 1536
+  },
+  "stores": {
+    "chunks": {
+      "files": {
+        "index.faiss": {
+          "size_bytes": 3797037,
+          "sha256": "dab1276f8aed2a84ee6afe3a4db11f9e7420cf40a86661b8a9c728d17fea5b74"
+        },
+        "index.pkl": {
+          "size_bytes": 602092,
+          "sha256": "b2f74c7eace8a8517d27e027cfea18e50098febec4ed2af6f5af10a7f9aaa26b"
+        }
+      }
+    },
+    "summaries": {
+      "files": {
+        "index.faiss": {
+          "size_bytes": 104493,
+          "sha256": "2682b2d000a8d2143ac116e293f07194345b3de32cbc1210cfc5e8cb7776da32"
+        },
+        "index.pkl": {
+          "size_bytes": 28166,
+          "sha256": "bcc92d3cbab34a75f5144e47b8bae1dcc8963178d63c1ebe56eb728593887144"
+        }
+      }
+    },
+    "quotes": {
+      "files": {
+        "index.faiss": {
+          "size_bytes": 7981101,
+          "sha256": "5a5c43eb688ca2e0b79fb7673bcffda8880e58daedecc7bc272044563afc2682"
+        },
+        "index.pkl": {
+          "size_bytes": 352457,
+          "sha256": "5ef903db2cbc0d25783a812b5ab2c09e1c925f393835a776e354834a1775769c"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+name: Offline quality gates
+
+"on":
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: offline-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: |
+            requirements-runtime.txt
+            requirements-dev.txt
+      - name: Install locked runtime dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt
+          python -m pip check
+      - name: Lint Python sources
+        run: >-
+          python -m ruff check controllable_rag evaluation tests
+          simulate_agent.py functions_for_pipeline.py helper_functions.py
+          rebuild_vector_stores.py
+      - name: Compile Python sources
+        run: >-
+          python -m compileall -q controllable_rag evaluation tests
+          simulate_agent.py functions_for_pipeline.py helper_functions.py
+          rebuild_vector_stores.py
+      - name: Run offline tests
+        run: python -m unittest discover -v
+      - name: Verify prioritized interview queue
+        run: python evaluation/build_interview_queue.py --check
+      - name: Audit ingestion and index distributions
+        run: python evaluation/audit_ingestion.py --trust-local-index
+      - name: Audit seed dataset and evidence
+        run: >-
+          python evaluation/audit_dataset.py
+          --trusted-corpus-index chunks_vector_store/index.pkl
+          --min-cases 13
+      - name: Audit candidate dataset and evidence
+        run: >-
+          python evaluation/audit_dataset.py
+          --dataset evaluation/dataset_candidates.jsonl
+          --trusted-corpus-index chunks_vector_store/index.pkl
+          --min-cases 39
+      - name: Audit evaluation risk coverage
+        run: python evaluation/audit_risk_coverage.py

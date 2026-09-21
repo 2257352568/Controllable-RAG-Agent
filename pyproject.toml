@@ -1,0 +1,15 @@
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"evaluation/build_interview_queue.py" = ["E402"]
+"evaluation/review_judge.py" = ["E402"]
+"evaluation/review_progress.py" = ["E402"]
+"evaluation/repair_quote_locations.py" = ["E402"]
+"evaluation/audit_risk_coverage.py" = ["E402"]
+"evaluation/run_chunking_ablation.py" = ["E402"]
+"simulate_agent.py" = ["F403", "F405"]

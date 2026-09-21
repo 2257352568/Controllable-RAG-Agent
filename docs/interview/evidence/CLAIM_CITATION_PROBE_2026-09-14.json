@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "created_at": "2026-09-14T01:42:33.691651+00:00",
+    "dataset_sha256": "29ad10750e7e048809bd5c31e9e40e53f276c30f39f8d67ea7322f69e6bddc32",
+    "prompt_version": "2026-09-14.2",
+    "model": "qwen3.8-max",
+    "base_url_host": "dashscope.aliyuncs.com",
+    "temperature": 0,
+    "max_output_tokens": 2000,
+    "sdk_max_retries": 5,
+    "request_timeout_seconds": 60,
+    "max_attempts_per_case": 2,
+    "logical_call_limit": 8,
+    "token_limit": 12000,
+    "deadline_seconds": 120,
+    "scope": "2 synthetic cases through answer generation and grounding; no retrieval/full Agent",
+    "source_sha256": {
+      "controllable_rag/citations.py": "3825e1c3340a14329f194b19fcbb607debb1e8574dfda9f830340503782bd029",
+      "controllable_rag/nodes.py": "a71437a9fafd5ba18e44482c01530672bb61853ba9ec733759a875a34189355c",
+      "controllable_rag/prompts.py": "804d362a3305f331e684dd5285bf1e9f7f98dffe3f964989715e847bc15ef9db",
+      "controllable_rag/schemas.py": "a11ca2a8cddb6d23736473c08137f8e13796be2f07e55fbc59370d270eac510b",
+      "evaluation/run_claim_citation_probe.py": "1c414a6b55154b73b17c94458036c12b14ee6d16a4542c585904013fc576778d"
+    },
+    "packages": {
+      "langchain-core": "1.6.3",
+      "langchain-openai": "1.6.2",
+      "langgraph": "1.2.11"
+    }
+  },
+  "summary": {
+    "cases": 2,
+    "passed": 2,
+    "errors": 0
+  },
+  "budget": {
+    "max_model_requests": 8,
+    "max_total_tokens": 12000,
+    "model_requests_started": 4,
+    "tokens_committed": 1873,
+    "tokens_reserved": 0,
+    "budget_accounting_complete": true,
+    "max_elapsed_seconds": 120.0,
+    "elapsed_seconds": 22.063,
+    "remaining_seconds": 97.937
+  },
+  "cases": [
+    {
+      "case_id": "single_hop",
+      "error_type": null,
+      "answer": "The Neral-731 cabinet code is VASK-204.",
+      "grounded": true,
+      "attempts": 1,
+      "supporting_ids": [
+        "chunks-p1-4755863070"
+      ],
+      "claim_citations": [
+        {
+          "claim": "The Neral-731 cabinet code is VASK-204.",
+          "supporting_ids": [
+            "chunks-p1-4755863070"
+          ]
+        }
+      ],
+      "candidate_claim_citations": [
+        {
+          "claim": "The Neral-731 cabinet code is VASK-204.",
+          "supporting_ids": [
+            "chunks-p1-4755863070"
+          ]
+        }
+      ],
+      "validation_error": "",
+      "grounding_explanation": "The single factual claim in the answer—that the Neral-731 cabinet code is VASK-204—is directly and fully supported by source chunks-p1-4755863070, which states exactly that. No uncited sources or prior knowledge are required.",
+      "expected_phrases_present": true,
+      "expected_sources_present": true,
+      "latency_seconds": 12.596,
+      "model_requests": 2,
+      "successful_requests": 2,
+      "input_tokens": 670,
+      "output_tokens": 154,
+      "total_tokens": 824,
+      "token_usage_available": true,
+      "passed": true
+    },
+    {
+      "case_id": "multi_fact",
+      "error_type": null,
+      "answer": "The cabinet code for Neral-731 is VASK-204. The cabinet code for Miven-982 is TOLP-618.",
+      "grounded": true,
+      "attempts": 1,
+      "supporting_ids": [
+        "chunks-p1-4755863070",
+        "chunks-p2-d26c023297"
+      ],
+      "claim_citations": [
+        {
+          "claim": "The cabinet code for Neral-731 is VASK-204.",
+          "supporting_ids": [
+            "chunks-p1-4755863070"
+          ]
+        },
+        {
+          "claim": "The cabinet code for Miven-982 is TOLP-618.",
+          "supporting_ids": [
+            "chunks-p2-d26c023297"
+          ]
+        }
+      ],
+      "candidate_claim_citations": [
+        {
+          "claim": "The cabinet code for Neral-731 is VASK-204.",
+          "supporting_ids": [
+            "chunks-p1-4755863070"
+          ]
+        },
+        {
+          "claim": "The cabinet code for Miven-982 is TOLP-618.",
+          "supporting_ids": [
+            "chunks-p2-d26c023297"
+          ]
+        }
+      ],
+      "validation_error": "",
+      "grounding_explanation": "Both claims in the answer are directly supported by the provided evidence. The first claim ('The cabinet code for Neral-731 is VASK-204') is explicitly stated in chunks-p1-4755863070. The second claim ('The cabinet code for Miven-982 is TOLP-618') is explicitly stated in chunks-p2-d26c023297. Each cited source supports a substantive claim, and no outside knowledge or uncited sources are required.",
+      "expected_phrases_present": true,
+      "expected_sources_present": true,
+      "latency_seconds": 9.466,
+      "model_requests": 2,
+      "successful_requests": 2,
+      "input_tokens": 777,
+      "output_tokens": 272,
+      "total_tokens": 1049,
+      "token_usage_available": true,
+      "passed": true
+    }
+  ]
+}
+

@@ -1,0 +1,14 @@
+{
+  "schema_version": "2026-09-14.1",
+  "scope": "Synthetic citation-attribution diagnostic; not a human-reviewed quality benchmark",
+  "sources": [
+    {"content": "The Neral-731 cabinet code is VASK-204.", "page": 1},
+    {"content": "The Miven-982 cabinet code is TOLP-618.", "page": 2}
+  ],
+  "cases": [
+    {"id": "single_correct", "claim": "The Neral-731 cabinet code is VASK-204.", "selected": [0], "expected_grounded": true},
+    {"id": "single_wrong_citation", "claim": "The Neral-731 cabinet code is VASK-204.", "selected": [1], "expected_grounded": false},
+    {"id": "multi_missing_premise", "claim": "The Neral-731 cabinet code is VASK-204, and the Miven-982 cabinet code is TOLP-618.", "selected": [0], "expected_grounded": false},
+    {"id": "multi_complete", "claim": "The Neral-731 cabinet code is VASK-204, and the Miven-982 cabinet code is TOLP-618.", "selected": [0, 1], "expected_grounded": true}
+  ]
+}

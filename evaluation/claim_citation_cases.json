@@ -1,0 +1,22 @@
+{
+  "schema_version": "2026-09-14.1",
+  "scope": "Synthetic structured claim-citation compatibility probe; not human-reviewed gold data",
+  "sources": [
+    {"content": "The Neral-731 cabinet code is VASK-204.", "page": 1},
+    {"content": "The Miven-982 cabinet code is TOLP-618.", "page": 2}
+  ],
+  "cases": [
+    {
+      "id": "single_hop",
+      "question": "What is the Neral-731 cabinet code?",
+      "expected_phrases": ["Neral-731", "VASK-204"],
+      "expected_source_indexes": [0]
+    },
+    {
+      "id": "multi_fact",
+      "question": "What are the cabinet codes for Neral-731 and Miven-982?",
+      "expected_phrases": ["Neral-731", "VASK-204", "Miven-982", "TOLP-618"],
+      "expected_source_indexes": [0, 1]
+    }
+  ]
+}

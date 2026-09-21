@@ -1,0 +1,23 @@
+{
+  "documents": 1299,
+  "unique": 1298,
+  "ambiguous": 1,
+  "missing": 0,
+  "page_coverage": 0.99923,
+  "match_method": "normalized_exact_match_against_reconstructed_chunks",
+  "chunk_pages": 219,
+  "written": true,
+  "chunk_index_pickle_sha256": "b2f74c7eace8a8517d27e027cfea18e50098febec4ed2af6f5af10a7f9aaa26b",
+  "quote_index_pickle_sha256_before": "5ef903db2cbc0d25783a812b5ab2c09e1c925f393835a776e354834a1775769c",
+  "ambiguous_records": [
+    {
+      "quote_index": 1041,
+      "candidate_pages": [
+        43,
+        186
+      ]
+    }
+  ],
+  "quote_index_pickle_sha256_after": "5ef903db2cbc0d25783a812b5ab2c09e1c925f393835a776e354834a1775769c",
+  "index_manifest_sha256_after": "7ab947295e6febdcae8ff3e9c43fa58bd84849540abdcbe7b031bb7c30b41eaa"
+}
