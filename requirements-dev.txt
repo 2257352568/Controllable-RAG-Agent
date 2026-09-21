@@ -1,3 +1,3 @@
 # CI/development-only tools. Runtime dependencies remain separately auditable.
 -r requirements-runtime.txt
-ruff==0.16.7
+ruff==0.16.8
